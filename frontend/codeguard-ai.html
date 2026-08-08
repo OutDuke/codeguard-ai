@@ -1003,7 +1003,7 @@ async function runAnalysis(kind, payload){
   currentFilter = 'all';
 
   let requestPromise;
-  if(kind === 'demo'){
+  if(false){
     requestPromise = new Promise(resolve => setTimeout(()=>resolve(demoResult()), 2200));
   } else if(kind === 'pr'){
     requestPromise = apiRequest('/api/analyze/pr', { prUrl: payload.prUrl });
@@ -1017,11 +1017,11 @@ async function runAnalysis(kind, payload){
   try{
     result = await requestPromise;
     fromBackend = (kind !== 'demo');
-  }catch(err){
+  }
+  catch(err){
     console.error('Analysis failed:', err);
-    showToast(kind === 'demo' ? 'Demo failed to load' : `Backend unreachable — showing demo results (${err.message})`);
-    result = demoResult();
-    fromBackend = false;
+    showToast("Backend error: " + err.message);
+    return; // ❌ STOP instead of fake data
   }
 
   usingBackendData = fromBackend;
