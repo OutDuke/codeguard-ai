@@ -33,7 +33,7 @@ npm start
 You should see:
 
 ```text
-CodeGuard AI backend listening on http://localhost:8787
+CodeGuard AI backend listening on https://codeguard-ai-c8kf.onrender.com/
 ```
 
 ## 4. Frontend
@@ -41,7 +41,7 @@ CodeGuard AI backend listening on http://localhost:8787
 Open `codeguard-ai.html`. It calls:
 
 ```text
-http://localhost:8787
+https://codeguard-ai-c8kf.onrender.com/
 ```
 
 The frontend health check now reads `geminiConfigured` instead of `anthropicConfigured`.
