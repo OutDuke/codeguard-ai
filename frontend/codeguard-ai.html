@@ -813,7 +813,7 @@ const FINDINGS = [
    Point this at your running backend (see /backend in this project).
    Override from the browser console with: window.CODEGUARD_API_BASE = "https://your-api.example.com"
    ============================================================ */
-const API_BASE = (window.CODEGUARD_API_BASE || '').replace(/\/$/, '');
+const API_BASE = "https://codeguard-ai-c8kf.onrender.com";
 
 async function apiRequest(path, body){
   const res = await fetch(API_BASE + path, {
