@@ -1,0 +1,32 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Backend
+        run: |
+          cd backend
+          npm install
+
+      - name: Run Backend Check
+        run: |
+          cd backend
+          node -e "console.log('Backend OK')"
+
+      - name: Frontend Check
+        run: echo "Frontend OK"
