@@ -1,0 +1,20 @@
+{
+  "name": "codeguard-ai-backend",
+  "version": "1.0.0",
+  "description": "Backend API for CodeGuard AI \u2014 analyzes GitHub PRs / diffs with Gemini and generates tests.",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "@google/generative-ai": "^0.24.1"
+  }
+}
